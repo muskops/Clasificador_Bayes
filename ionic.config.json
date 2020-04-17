@@ -1,0 +1,7 @@
+{
+  "name": "Clasificador_Bayes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

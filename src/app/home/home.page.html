@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Clasificador Bayes
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dia</th>
+                <th>Descuento</th>
+                <th>Entrega gratis</th>
+                <th>Comprar</th>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+
+        </tbody>
+    </table>
+
+    <ion-list>
+        <ion-radio-group value="" [(ngModel)]="valDia">
+            <ion-list-header>
+                <ion-label>Dia</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label>Entresemana</ion-label>
+                <ion-radio slot="start" value="entresemana"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Fin de semana</ion-label>
+                <ion-radio slot="start" value="fin de semana"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Dia festivo</ion-label>
+                <ion-radio slot="start" value="dia festivo"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+        <ion-radio-group value="" [(ngModel)]="valDescuento">
+            <ion-list-header>
+                <ion-label>Descuento</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" value="si"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+        <ion-radio-group value="" [(ngModel)]="valEGratis">
+            <ion-list-header>
+                <ion-label>Entrega gratis</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" value="si"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+        <ion-radio-group value="" [(ngModel)]="valCompra">
+            <ion-list-header>
+                <ion-label>Comprar</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="start" value="si"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <ion-button color="primary" (click)="llenarTabla()">Agregar</ion-button>
+    <ion-button (click)="calcular()">Calcular</ion-button>
+
+
+    <table class="table">
+        <tbody id="tablaResult">
+        </tbody>
+    </table>
+
+</ion-content>
